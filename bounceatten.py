@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 A = np.arange(5,21,0.1)               # atten/bounce
-b = [2.0,3.0,4.0]             # bounces in 1,2,3
+b = [1.0,3.0,5.0]             # bounces in 1,2,3
 
 
 plt.figure(1)
