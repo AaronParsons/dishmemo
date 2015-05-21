@@ -11,6 +11,44 @@
 \setlength{\topmargin}{-0.75in}
 \setlength{\textheight}{10.0in}
 %%%%%%%%%%%
+\newcommand\aj{\ref@jnl{AJ}}%
+          % Astronomical Journal
+\newcommand\actaa{\ref@jnl{Acta Astron.}}%
+  % Acta Astronomica
+\newcommand\araa{\ref@jnl{ARA\&A}}%
+          % Annual Review of Astron and Astrophys
+\newcommand\apj{\ref@jnl{ApJ}}%
+          % Astrophysical Journal
+\newcommand\apjl{\ref@jnl{ApJ}}%
+          % Astrophysical Journal, Letters
+\newcommand\apjs{\ref@jnl{ApJS}}%
+          % Astrophysical Journal, Supplement
+\newcommand\ao{\ref@jnl{Appl.~Opt.}}%
+          % Applied Optics
+\newcommand\apss{\ref@jnl{Ap\&SS}}%
+          % Astrophysics and Space Science
+\newcommand\aap{\ref@jnl{A\&A}}%
+          % Astronomy and Astrophysics
+\newcommand\aapr{\ref@jnl{A\&A~Rev.}}%
+          % Astronomy and Astrophysics Reviews
+\newcommand\aaps{\ref@jnl{A\&AS}}%
+          % Astronomy and Astrophysics, Supplement
+\newcommand\icarus{\ref@jnl{Icarus}}%
+  % Icarus
+\newcommand\mnras{\ref@jnl{MNRAS}}%
+          % Monthly Notices of the RAS
+\newcommand\prc{\ref@jnl{Phys.~Rev.~C}}%
+          % Physical Review C
+\newcommand\prd{\ref@jnl{Phys.~Rev.~D}}%
+          % Physical Review D
+\newcommand\pre{\ref@jnl{Phys.~Rev.~E}}%
+          % Physical Review E
+\newcommand\prl{\ref@jnl{Phys.~Rev.~Lett.}}%
+          % Physical Review Letters
+\newcommand\pasa{\ref@jnl{PASA}}%
+  % Publications of the Astron. Soc. of Australia
+\newcommand\pasp{\ref@jnl{PASP}}%
+          % Publications of the ASP
 
 \newcommand{\kvec}{{\bf k}}
 \newcommand{\bvec}{{\bf b}}
@@ -45,7 +83,7 @@ direction.
 Recent work has shown that, for an interferometer whose
 analog bandpass and beam chromaticity are sufficiently smooth, systematics arising from foreground emission
 are isolated in the cylindrically averaged power spectrum $P(\kpr,\kpl)$ within
-a wedge-shaped region described by \citep{parsons_et_al2012b,pober_et_al2013,parsons_et_al2014,ali_et_al2015}:
+a wedge-shaped region described by \citep{2012ApJ...756..165P,2013ApJ...768L..36P,2014ApJ...788..106P,2015arXiv150206016A}:
 % XXX add the whole list of wedge cites
 \begin{align}
 |\kpl| &\le \frac{Y}{X\nu}\kpr + YS\nonumber\\
@@ -58,12 +96,12 @@ antennas in an interferometric pair, which substitutes for $\kpr$ according to t
 relation $\kvpr=X\nu\bvec/c$. As we will derive below, $S$ is an additional additive offset related to
 the combined spectral smoothness of foregrounds and the antenna response.
 
-As pointed out in \citet{parsons_et_al2012b}, the factor of $b/c$ in the
+As pointed out in \citet{2012ApJ...756..165P}, the factor of $b/c$ in the
 second line of equation (\ref{eq:wedge_bound}) can be interpreted as the light-crossing time
 or maximum geometric signal delay, $\tau_{b,max}$ associated with an interferometric baseline.  
 Particularly for per-baseline
 analyses such as those
-employed on PAPER \citep{parsons_et_al2014,jacobs_et_al2015,moore_et_al2015,ali_et_al2015},
+employed on PAPER \citep{2014ApJ...788..106P,2015ApJ...801...51J,2015arXiv150205072M,2015arXiv150206016A},
 {\it signal delay} turns out to be a 
 powerful basis for understanding the chromatic effects of interferometric observations.
 Signal delay arises as the Fourier dual to spectral frequency, according to the delay
@@ -86,7 +124,7 @@ in order to re-express the delay-transformed visibility as
 where $\delta_D$ is the Dirac delta function, `$~\tilde{}~$' signifies Fourier transformation along
 the frequency axis, and `$*$' denotes convolution.
 
-Under the ``delay approximation" \citep{parsons_et_al2012b},
+Under the ``delay approximation" \citep{2012ApJ...756..165P},
 signal delay $\tau$ can be interpreted as a reasonable approximation to $\kpl$, giving us the following relationship
 between the delay-transformed visibility and the power spectrum:
 \begin{equation}
@@ -94,7 +132,7 @@ between the delay-transformed visibility and the power spectrum:
 \label{eq:v2_to_pk}
 \end{equation}
 where $k_B$ is Boltzmann's constant, $\lambda$ is spectral wavelength, $\Omega$ is the angular area of the power-squared
-beam \citep{parsons_et_al2014}, and $B$ is the effective bandwidth over which the delay transformation is performed.
+beam \citep{2014ApJ...788..106P}, and $B$ is the effective bandwidth over which the delay transformation is performed.
 
 We can now revisit the bound on systematics arising from the interaction of foreground emission and
 instrumental chromaticism given in equation (\ref{eq:wedge_bound}).  Let us assume for a moment that
@@ -158,7 +196,7 @@ for the shortest baselines is a telltale sign
 of the influence of diffuse synchrotron emission.
 
 XXX If get analytic derivation of foreground profile in delay working, relate to that here.
-Figure XXX in \citet{pober_et_al2013}
+Figure XXX in \citet{2013ApJ...768L..36P}
 shows evidence of the departure equation (\ref{eq:wedge_bound}) described above for baselines shorter than
 $\lesssim10$ wavelengths.  Although this empirical result includes a contribution from the PAPER antenna beam,
 the constant additive term that $\tilde A$ contributes (XXX maybe should capture in eq 1 that I could be baseline-dep)
@@ -387,7 +425,7 @@ by the same large wooden poles that are used to suspend the feed.  The bottom of
 
 The equation for sensitivity has been described in previous works [REFS] and depends on many parameters
 related to the instrumentation, the configuration, the location, the observing strategy, etc.  A useful form for 
-the proposed compact configuration is Eq 27 in \citep{Parsonsetal2012} and reproduced here:
+the proposed compact configuration is Eq 27 in \citep{2012ApJ...753...81P} and reproduced here:
 \begin{equation}
 \centering
 \label{eq:sensitivity}
@@ -407,7 +445,7 @@ where $k$ is the magnitude of the $k$-mode, $B$ is the bandwidth, $\Delta\ln k$ 
 of the binsize, $\Omega$ is the field-of-view, $T_{\text{sys}}$ is the system temperature, 
 ${t_\text{per\_day}}$ is the number of hours observed per day, $t_{\text{cam}}$ is the number of days
 observed, $N_a$ is the number of antennas, and $f_o/f$ is the configuration metric for a 
-redundant array as defined in \citep{Parsonsetal2012}.
+redundant array as defined in \citep{2012ApJ...753...81P}.
 
 Note that $\Delta^2_N(k)$ is the standard radiometric sensitivity equation, scaled by
 the volume in $k$-space, normalized by the power spectrum Fourier coefficient, and
