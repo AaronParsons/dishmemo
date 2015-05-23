@@ -65,7 +65,7 @@
 
 \begin{document}
 \title{Configuration of the HERA Element}
-\author{David DeBoer and Aaron Parsons}
+\author{Aaron Parsons \and David DeBoer}
 \maketitle
 
 \section{Introduction}
@@ -83,7 +83,7 @@ direction.
 Recent work has shown that, for an interferometer whose
 analog bandpass and beam chromaticity are sufficiently smooth, systematics arising from foreground emission
 are isolated in the cylindrically averaged power spectrum $P(\kpr,\kpl)$ within
-a wedge-shaped region described by \citep{2012ApJ...756..165P,2013ApJ...768L..36P,2014ApJ...788..106P,2015arXiv150206016A}:
+a wedge-shaped region \citep{2012ApJ...756..165P,2013ApJ...768L..36P,2014ApJ...788..106P,2015arXiv150206016A}:
 % XXX add the whole list of wedge cites
 \begin{align}
 |\kpl| &\le \frac{Y}{X\nu}\kpr + YS\nonumber\\
@@ -142,7 +142,7 @@ the integral over $\tilde A(\shat,0)~\tilde I(\shat,0)$ in the sky directions th
 For a given baseline $\bvec=\kvpr/X\nu$, $\tau_{\bvec,\shat}$ is bounded by $\tau_{b,max}=b/c$, implying that
 for the case we have outlined, $\tilde V_\bvec(\tau)$ must be zero outside of a region
 $|\tau|\le b/c$.  Under the delay approximation, $\kpl\approx Y\tau$, so we can use equation
-(\ref{eq:v2_to_pk}) say that $P(\kpr,\kpl)$ must be zero outside of the region specified in 
+(\ref{eq:v2_to_pk}) and say that $P(\kpr,\kpl)$ must be zero outside of the region specified in 
 equation (\ref{eq:wedge_bound}) for $S=0$.
 
 The inclusion of $S$ in equation (\ref{eq:wedge_bound}) accounts for precisely the terms we neglected above:
@@ -158,32 +158,30 @@ the boundary between the systematics-dominated and signal-dominated regimes.
 As such, it makes the most sense to determine width by the interval in
 delay domain outside of which $\AItau$ is below the expected level
 of the 21cm reionization signal.  Spectrally smooth ($\tau\approx0$) foregrounds are approximately
-four to five times brighter that the expected reionization signal \citep{}, so a conservative definition of
+four to five times brighter that the expected reionization signal \citep{unknown}, so a conservative definition of
 $S$ requires
 \begin{equation}
 \frac{|\AItau|}{|\langle\tilde I\rangle(\tau=0)|}<10^{-6}.
 \label{eq:def_S}
 \end{equation}
 In words, we define $S$ as the delay interval over which
-$\AI$ falls off by -60 dB.
+$\AI$ falls off by -60 dB.  At this level, the contribution from antenna effects are well below the signal level in the region outside from where the foregrounds contaminate.  XXXWeak sentenceXXX
 
 Given this framework, an obvious design goal for an interferometer aiming to 
 measure the 21cm reionization signal is create antennas that can be close-packed to minimize $b$, and
 which yield an antenna response that minimizes $S$.  However, as we will explore in more detail below, 
-these aims must be balanced against cost.
+these goals must be balanced against cost.
 
 % sky averaged 
 \subsection{Inherent Chromaticity of Foregrounds}
 
 Before we explore antenna design, however, it would be convenient to set an upper bound on the contribution of
-$\tilde I$ in equation (\ref{eq:def_S}).  XXX this is turning out to be a bit tricky.  Result is strongly
-dependent on windowing.  Choosing a Blackman-Harris window and playing with power-law spectral indices of
--1 and -2, getting a width for $\tilde I$ in range of 10 to 60 ns.
-
-Suggest diminishing returns associated with pushing instrumental chromaticity much lower than 10 to 60 ns.
+$\tilde I$ in equation (\ref{eq:def_S}).   The result is strongly
+dependent on windowing, however choosing a Blackman-Harris window and playing with power-law spectral indices of
+-1 and -2, we find that a width for $\tilde I$ in range of 10 to 60 ns provides a reasonable bound.  This suggests diminishing returns associated with pushing instrumental chromaticity much lower than 10 to 60 ns.
 
 Also, as we push antennas closer together, galactic synchrotron emission (our dominant foreground) gets
-brighter as $C_\ell\propto\ell^{-3}$ \citep{}.
+brighter as $C_\ell\propto\ell^{-3}$ \citep{unknown}.
 Under the assumption that $\kpl$ is the dominant component of $\kvec$ (which
 holds for the short baselines used in PAPER and HERA),
 this implies that $|\AItau|^2$ must decrease more rapidly than $\tau^{-3}$ for a reduction in baseline length
@@ -195,18 +193,18 @@ strictly linear relationship in equation (\ref{eq:wedge_bound}) (which we will c
 for the shortest baselines is a telltale sign
 of the influence of diffuse synchrotron emission.
 
-XXX If get analytic derivation of foreground profile in delay working, relate to that here.
-Figure XXX in \citet{2013ApJ...768L..36P}
+%%%XXX If get analytic derivation of foreground profile in delay working, relate to that here.
+Figure 3 in \citet{2013ApJ...768L..36P}
 shows evidence of the departure equation (\ref{eq:wedge_bound}) described above for baselines shorter than
 $\lesssim10$ wavelengths.  Although this empirical result includes a contribution from the PAPER antenna beam,
-the constant additive term that $\tilde A$ contributes (XXX maybe should capture in eq 1 that I could be baseline-dep)
+the constant additive term that $\tilde A$ contributes (which is baseline dependent)
 to the wedge boundary does not change the position of the ankle.  Also worth noting is that, although an ankle
 appears around $\sim9$ wavelengths, the extent of the wedge in $\kpl$ continues to decrease slowly toward 
 even shorter baselines.  This implies that, while there are diminishing returns in foreground systematics for using
 baseline shorter than $\sim18$ m (9 wavelengths at 150 MHz), there does not appear to be a strong penalty 
 for doing so either.
 
-\subsection{Setting a Specification for Antenna Chromaticity}
+\subsection{Antenna Chromaticity}
 
 So far, we have largely ignored the contribution of the antenna term in $\AItau$.  We now have
 a handle on the chromaticism introduced by the baseline term in equation (\ref{eq:meas_eq}) and 
@@ -238,29 +236,37 @@ for a total of 180 ns ($|\kpl|=0.9\hMpci$ at 150 MHz).
 % XXX below here treating as memo, not paper
 \section{HERA Element Design}
 
-The delay-spectrum analysis technique employed for HERA requires that foreground
+As shown above, the delay-spectrum analysis technique employed for HERA requires that foreground
 systematics be tightly bounded within a wedge-shaped region in $(\kpr,\kpl)$ space,
 such that contamination outside of this region falls
 below the expected level of the 21cm reionization signal.
 The supplied value from the analysis team is that reflections must be reduced
-by at least -60 dB at 60 ns.  Another formulation is VSWR $<$ 1.002 integrated % XXX don't think 1.002 is right.  need to check
-over fluctuation scales of $\Delta\nu\leq17$ MHz.
+by at least -60 dB at 60 ns.  Another formulation is VSWR $<$ 1.002 integrated over fluctuation scales of $\Delta\nu\leq17$ MHz.
 
 Assuming that HERA elements will have to deliver substantially more collecting area per feed
 than the current PAPER design, we adopted a parametrizable design based on a parabolic dish
 with a feed suspended over it.
-Thus, the diameter of the HERA dish is set by three factors:  
+Thus, the optics of the HERA dish is set by three factors:  
 \begin{enumerate}
-\item meeting the chromaticity specification of -60 dB at 60 ns, % XXX \ref{eq:A_req}
-\item minimizing the impact of baseline-coupling systematics, and % XXX wasn't quite sure what other systematics referred to here
+\item meeting the chromaticity specification of -60 dB at 60 ns,  (Eq. \ref{eq:A_req})
+\item minimizing the impact of baseline-coupling systematics, and 
 \item minimizing cost for a fixed sensitivity
 \end{enumerate}
+The relevant parameters are the diameter ($D$), the focal length ($f$) and the overall sensitivity (essentially, $N$, the total number of elements).  Antenna chromaticity is largely determined by the focal length (at least as a design parameter), and the discussion will focus on that.
 
-\subsection{Focal Ratio}
-The diameter of the HERA antenna is set by three factors:  (1) meeting the delay reflection specification of 60 dB at 60 ns, (2) lessening the impact of systematics, (3) lessening cost for a fixed sensitivity.
+ \subsection{Focal Length}
+Optimizing the focal length comes down to simultaneously optimizing the $f/D$ for system performance and $f$ for delay performance (chromaticity).  We discuss both of these aspects below.
 
-\section{Delay}
-The delay-delayrate analysis technique employed for HERA requires that the region of phase space employed has contamination below the level of the signal.  The supplied value from the analysis team is that reflections must be reduced by at least 60 dB at 60 ns.  Another formulation is VSWR $<$ 1.002 at frequencies below 15 MHz.  The reflections between the feed and vertex is a chief contributor.  The determine the delay scale a focal ratio must be used.  A series of analytical models was run at several diameters using the calculated beam pattern of the PAPER feed.  The results are shown in Figure \ref{fig:efficiency}.  Note that they all peak at about a focal ratio of 0.32 (the solid lines with the x-axis divided by 10).
+\subsubsection{Efficiency}
+Assuming a feed based on the PAPER design for a backplane without flaps,
+we computed a series of analytical models at 150 MHz versus diameter over a 3.4--4.6 m range in focal height
+for an ideal parabolic dish.  These models were used to determine the total efficiency of
+feed/reflector system, with efficiency $\eta$ computed as the effective collecting area
+relative to the total geometric collecting area of a circular aperture of the
+indicated diameter.
+As shown in Figure \ref{fig:efficiency},
+model efficiencies peak at $\eta\approx0.73$ for focal ratios of $f/D\approx0.32$ (the solid lines with the x-axis divided by 10), largely
+independent of the absolute scale of diameter.
 
 \begin{figure}[h]
 \centering
@@ -271,54 +277,28 @@ for the dish diameters $D$ indicated in the legend.  The solid curves extrapolat
 model efficiencies of the corresponding dashed curves to a $D=10$ m dish (note
 the red dashed and solid curves are identical). The approximate agreement of the
 solid curves indicates that to first order, efficiency is a function
-of the focal ratio $f/D$. The absolute scaling of $\eta$ with $D$ appears as a second-order (few percent)
-increase in efficiency.  Hence, peak efficiencies of order $\eta\approx0.73$ are expected for
+of the focal ratio $f/D$. The absolute scaling of $\eta$ with $D$ appears as a second-order (few percent) increase in efficiency.  Hence, peak efficiencies of order $\eta\approx0.73$ are expected for
 focal ratios of $f/D\approx0.32$.}
-% XXX check this with Dave
 \label{fig:efficiency}
 \end{figure}
 
-
-The dominant source of chromaticism within the
-antenna can be identified with internal signal reflections.  Diffraction around dish
-edges and the evolving response of the feed also introduce chromaticism, but the
-scale of these frequency-dependent effects are expected to be significantly broader
-than the specified 16 MHz scale.  
-In order to be problematic, signal reflections originating at the feed must re-enter
-the feed after a time delay of 60 ns before they are attenuated by -60 dB.
-Taking a geometric interpretation for an ideal paraboloid, 
-off-axis emission from the feed is
-reflected out to the sky without re-entering the feed.
-Therefore, the dominant source of reflections is expected to arise between the feed and vertex.
-If reflections between the feed and vertex are dominant, the most important determinant
-of the timescale of reflections will be the feed height above the vertex.  This 
-implies that the focal ratio (the ratio of the focal height $f$ to the diameter $D$)
-of paraboloid dish is one of the key aspects 
-determining delay-spectrum performance.
-
-Assuming a feed based on the PAPER design for a backplane without flaps,
-we computed analytical models at XXX MHz versus diameter over a 3.4--4.6 m range in focal height
-for an ideal parabolic dish.  These models were used to determine the total efficiency of
-feed/reflector system, with efficiency $\eta$ computed as the effective collecting area
-relative to the total geometric collecting area of a circular aperture of the
-indicated diameter.
-As shown in Figure \ref{fig:efficiency},
-model efficiencies peak at $\eta\approx0.73$ for focal ratios of $f/D\approx0.32$, largely
-independent of the absolute scale of diameter.
-
-\subsection{Timescale and Amplitude of Feed-Vertex Reflections}
+\subsubsection{Chromatic Effects}
+The dominant source of chromaticism within the antenna can be identified with internal signal 
+reflections, with delays set largely by the focal length.  Diffraction around dish edges and the evolving 
+response of the feed also introduce chromaticism, but the scale of these frequency-dependent effects 
+are expected to be significantly broader than the specified 17 MHz scale.  In order to be problematic, 
+signal reflections originating at the feed must re-enter the feed after a time delay of 60 ns before they 
+are attenuated by 60 dB.Taking a geometric interpretation for an ideal paraboloid, off-axis emission 
+from the feed is reflected out to the sky without re-entering the feed.Therefore, the dominant source of 
+reflections is expected to arise between the feed and vertex.If reflections between the feed and vertex 
+are dominant, as noted above, the most important determinant of the timescale of reflections will be the 
+feed height above the vertex.  
 
 Here, we adopt the focal ratio of $f/D=0.32$ derived in the previous section in
 the context of maximizing efficiency.  In doing so, we reduce the parametrization of our parabolic
-dish to a single degree of freedom: the diameter $D$.  We may then explore how the timescale
-and amplitude of reflections between the feed and the vertex of the paraboloid scale with $D$.
+dish to a single degree of freedom: the diameter $D$ (or, equivalently $f$).  We may then explore how the timescale and amplitude of reflections between the feed and the vertex of the paraboloid scale with $D$.
 
-Although the focal heights that we will discuss generally place the feed and dish within
-the five-wavelength threshold for treatment as a near-field system, we will nonetheless
-use a geometric (far-field) model as a tool for determining coarse scaling relationships.
-Geometrically, waves arriving at the feed from the sky absorbed and reflected in accordance with
-the impedance match between free space and the feed/balun system.  The reflected wave
-is essentially re-emitted from the feed into the dish, and bulk of it is reflected back to the
+Although not properly adequate, we will use a geometric (far-field) model as a tool for determining coarse scaling relationships.  Geometrically, waves arriving at the feed from the sky absorbed and reflected in accordance with the impedance match between free space and the feed/balun system.  The reflected wave is essentially re-emitted from the feed into the dish, and bulk of it is reflected back to the
 sky.  However, as discussed previously, emission toward the the vertex of the parabola may be reflected
 back toward the feed, whereupon the absorption/reflection process repeats with an attenuated amplitude.
 
@@ -338,7 +318,7 @@ If we assume that after two reflections, the reflected signal has been attenuate
 below the -60 dB threshold in the specification, then the first reflection (which is above the
 threshold) must have a timescale shorter than 60 ns.  Following the curve for 1 round-trip
 reflection, we see that a 28-m dish (with a focal height of $\sim9$ m) is the maximum size
-that would meet specification.  If, on the other hand, a -60 dB attenuation is only achieved on the
+that would meet the specification.  If, on the other hand, a 60 dB attenuation is only achieved on the
 third reflection, then the curve for 2 round trips suggests a maximum diameter of 14 m.  Similarly,
 requiring the attenuation associated with one more reflection moves the maximum diameter down
 to 9.4 m.
@@ -346,8 +326,7 @@ to 9.4 m.
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{bounces.png}
-\caption{XXX curve 2 is right, but others are wrong.  Switch signs of X and Y axes.
-Overall attenuation for 1, 2 and 3 trips.
+\caption{Overall attenuation for 1, 2 and 3 trips.
 } \label{fig:bounces}
 \end{figure}
 
@@ -361,8 +340,8 @@ given as a function of $\Gamma$ for the indicated number of reflections falling
 inside 60 ns.
 
 Combining the results in Figures \ref{fig:roundtrip} and \ref{fig:bounces},
-we can see that dishes with $D<9.4$ m must have $\Gamma<-15$ dB, dishes
-where $9.4~{\rm m}<D<14~{\rm m}$ require $\Gamma<-20$ dB, and those with
+we can see that dishes with $D<9.4$ m must have $\Gamma<-12$ dB, dishes
+where $9.4~{\rm m}<D<14~{\rm m}$ require $\Gamma<-15$ dB, and those with
 diameters $14~{\rm m}<D<28$ m need $\Gamma<-30$ dB.
 
 It is worth noting that imperfect impedance matches in the feed as a function
@@ -382,8 +361,8 @@ We can calculate the power emitted into this region numerically given a model of
 but coarsely, for a feed emitting uniformly into $2\pi$ sr, the power emitted into this region
 represents -16 dB of the total reflected power.  
 
-Thus, it seems likely that $\Gamma\sim-20$ dB is achievable, while $\Gamma\sim-30$ dB
-would require careful tuning of the feed and dish.
+Thus, it seems likely that $\Gamma\sim-15$ dB is achievable, while $\Gamma\sim-30$ dB
+would require very careful tuning of the feed and dish, if possible at all.
 
 INCLUDE PLOT OF RELECTOMETRY TESTS
 
@@ -406,13 +385,13 @@ One obvious way to do this is to shield feeds from one another.
 To achieve this, the HERA dish design incorporates mesh screens at the boundaries of dishes that rise high
 enough to shield feeds from one another.  In the limit of geometric optics, these screens perfectly isolate
 feeds from one another, but risk introducing a new internal reflection pathway.  To avoid reflecting signals back into the feed,
-screens need to be tilted such that a ray originating from the feed and arriving at the screen are
+screens may be tilted such that a ray originating from the feed and arriving at the screen are
 reflected upward far enough that they miss the feed by a wavelength.
 For a dish with a radius of $\sim7$ m and an observing wavelength of $\sim$2 m, this requires a tilt angle $\alpha$
 given by $\tan\alpha=1/7$.  Thus, in the geometric limit, shielding screens must be approximately 8 degrees off of vertical.
 
-In practice, we will not the geometric optical limit, and the above specification can only be a coarse rule of thumb.
-Most notably, the top edge of the screen will introduce diffraction that degrates feed-feed isolation.  Scalloping
+In practice, the geometric optical limit is not met, and the above specification can only be a coarse rule of thumb.
+Most notably, the top edge of the screen will introduce diffraction that degrades feed-feed isolation.  Scalloping
 or rolling the edges of screens may help reduce diffraction, but these ideas will need to be tested in the field to
 show their efficacy.
 
@@ -422,8 +401,7 @@ by the same large wooden poles that are used to suspend the feed.  The bottom of
 30 cm inward relative to the top, for a tilt of 8.5 degrees from vertical.
 
 \section{Sensitivity}
-
-The equation for sensitivity has been described in previous works [REFS] and depends on many parameters
+The equation for sensitivity has been described in previous works \cite{unknown} and depends on many parameters
 related to the instrumentation, the configuration, the location, the observing strategy, etc.  A useful form for 
 the proposed compact configuration is Eq 27 in \citep{2012ApJ...753...81P} and reproduced here:
 \begin{equation}
