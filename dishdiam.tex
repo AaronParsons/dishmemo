@@ -11,13 +11,13 @@
 \setlength{\topmargin}{-0.75in}
 \setlength{\textheight}{10.0in}
 %%%%%%%%%%%
-\newcommand\aj{\ref@jnl{AJ}}%
+\newcommand\aj{AJ}%
           % Astronomical Journal
 \newcommand\actaa{\ref@jnl{Acta Astron.}}%
   % Acta Astronomica
 \newcommand\araa{\ref@jnl{ARA\&A}}%
           % Annual Review of Astron and Astrophys
-\newcommand\apj{\ref@jnl{ApJ}}%
+\newcommand\apj{ApJ}%
           % Astrophysical Journal
 \newcommand\apjl{\ref@jnl{ApJ}}%
           % Astrophysical Journal, Letters
@@ -74,8 +74,9 @@ The design of the HERA element is driven by advances in our understanding of how
 an interferometer's chromatic response interacts with foreground emission to
 produce systematics in power spectral measurements of the 21cm reionization signal.
 
-\section{Understanding Instrumental Chromaticity in the Context of the Wedge}
+The basic architecture going in was a fixed zenith prime-focus paraboloid.  The memo analyzes that structure in the context of a power spectrum measurement of the Epoch of Reionization.
 
+\section{Understanding Instrumental Chromaticity in the Context of the Wedge}
 For this discussion, we average the three-dimensional power spectrum $P(\kvec)$ along a cylinder
 of $k_x^2+k_y^2=\kpr^2$, where $\kvec\equiv(k_x,k_y,\kpl)$ is the three-dimensional wavevector,
 $(k_x,k_y)$ are taken to be in the plane of the sky, and $\kpl$ is measured along the line-of-sight (spectral)
@@ -158,14 +159,14 @@ the boundary between the systematics-dominated and signal-dominated regimes.
 As such, it makes the most sense to determine width by the interval in
 delay domain outside of which $\AItau$ is below the expected level
 of the 21cm reionization signal.  Spectrally smooth ($\tau\approx0$) foregrounds are approximately
-four to five times brighter that the expected reionization signal \citep{unknown}, so a conservative definition of
+four to five times brighter that the expected reionization signal \citep{unknown}XXX, so a conservative definition of
 $S$ requires
 \begin{equation}
 \frac{|\AItau|}{|\langle\tilde I\rangle(\tau=0)|}<10^{-6}.
 \label{eq:def_S}
 \end{equation}
 In words, we define $S$ as the delay interval over which
-$\AI$ falls off by -60 dB.  At this level, the contribution from antenna effects are well below the signal level in the region outside from where the foregrounds contaminate.  XXXWeak sentenceXXX
+$\AI$ falls off by -60 dB.  At this level, the contribution from antenna effects are well below the signal level in the region outside from where the foregrounds contaminate.  XXXI added this weak sentence to try and motivate the spec a little better -- needs improvement.XXX
 
 Given this framework, an obvious design goal for an interferometer aiming to 
 measure the 21cm reionization signal is create antennas that can be close-packed to minimize $b$, and
@@ -181,7 +182,7 @@ dependent on windowing, however choosing a Blackman-Harris window and playing wi
 -1 and -2, we find that a width for $\tilde I$ in range of 10 to 60 ns provides a reasonable bound.  This suggests diminishing returns associated with pushing instrumental chromaticity much lower than 10 to 60 ns.
 
 Also, as we push antennas closer together, galactic synchrotron emission (our dominant foreground) gets
-brighter as $C_\ell\propto\ell^{-3}$ \citep{unknown}.
+brighter as $C_\ell\propto\ell^{-3}$ \citep{unknown}XXX.
 Under the assumption that $\kpl$ is the dominant component of $\kvec$ (which
 holds for the short baselines used in PAPER and HERA),
 this implies that $|\AItau|^2$ must decrease more rapidly than $\tau^{-3}$ for a reduction in baseline length
@@ -296,9 +297,10 @@ feed height above the vertex.
 
 Here, we adopt the focal ratio of $f/D=0.32$ derived in the previous section in
 the context of maximizing efficiency.  In doing so, we reduce the parametrization of our parabolic
-dish to a single degree of freedom: the diameter $D$ (or, equivalently $f$).  We may then explore how the timescale and amplitude of reflections between the feed and the vertex of the paraboloid scale with $D$.
-
-Although not properly adequate, we will use a geometric (far-field) model as a tool for determining coarse scaling relationships.  Geometrically, waves arriving at the feed from the sky absorbed and reflected in accordance with the impedance match between free space and the feed/balun system.  The reflected wave is essentially re-emitted from the feed into the dish, and bulk of it is reflected back to the
+dish to a single degree of freedom: the diameter $D$ (or, equivalently $f$).  We may then explore how the timescale and amplitude of reflections between the feed and the vertex of the paraboloid scale with $D$.  As a tool for determining coarse scaling relationships we will 
+ use a geometric (far-field) model.
+ 
+ Geometrically, waves arriving at the feed from the sky absorbed and reflected in accordance with the impedance match between free space and the feed/balun system.  The reflected wave is essentially re-emitted from the feed into the dish, and bulk of it is reflected back to the
 sky.  However, as discussed previously, emission toward the the vertex of the parabola may be reflected
 back toward the feed, whereupon the absorption/reflection process repeats with an attenuated amplitude.
 
@@ -360,13 +362,19 @@ This gives a solid angle of 0.15 sr into which the feed must emit in order to re
 We can calculate the power emitted into this region numerically given a model of the feed response,
 but coarsely, for a feed emitting uniformly into $2\pi$ sr, the power emitted into this region
 represents -16 dB of the total reflected power.  
-
 Thus, it seems likely that $\Gamma\sim-15$ dB is achievable, while $\Gamma\sim-30$ dB
 would require very careful tuning of the feed and dish, if possible at all.
 
-INCLUDE PLOT OF RELECTOMETRY TESTS
+A full prototype has been built to investigate construction methods and to test the standing wave specification.  Using a network analyzer and a modified feed, this was measured as shown in Fig. \ref{fig:reflections}.  The frequency sweep used was 50 MHz to 1 GHz, which exceeds the feed bandwidth.  Even so, the 60 dB at 60 ns specification is nearly met.  These tests will be retaken using a nearly completed element in Green Bank.
 
-\section{Systematics}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{reflections.png}
+\caption{Network analyzer reflection measurements on prototype dish under several different configurations.  The dashed show the specification ``60 by 60''.}
+\label{fig:reflections}
+\end{figure}
+
+\section{Cross-Coupling}
 
 As described above, minimizing internal reflections that introduce signal delays is
 the primary design requirement of the HERA dish.  A secondary consideration is the
@@ -400,10 +408,10 @@ feeds), supported
 by the same large wooden poles that are used to suspend the feed.  The bottom of these screens are held at a distance of
 30 cm inward relative to the top, for a tilt of 8.5 degrees from vertical.
 
-\section{Sensitivity}
-The equation for sensitivity has been described in previous works \cite{unknown} and depends on many parameters
+\section{Sensitivity and Cost}
+The equation for sensitivity has been described in previous works ({\em c.f} \cite{2012ApJ...753...81P}, XXX\cite{unknown}) and depends on many parameters
 related to the instrumentation, the configuration, the location, the observing strategy, etc.  A useful form for 
-the proposed compact configuration is Eq 27 in \citep{2012ApJ...753...81P} and reproduced here:
+the proposed compact configuration is Eq 27 in \cite{2012ApJ...753...81P} and reproduced here:
 \begin{equation}
 \centering
 \label{eq:sensitivity}
@@ -422,8 +430,8 @@ the proposed compact configuration is Eq 27 in \citep{2012ApJ...753...81P} and r
 where $k$ is the magnitude of the $k$-mode, $B$ is the bandwidth, $\Delta\ln k$ is the log
 of the binsize, $\Omega$ is the field-of-view, $T_{\text{sys}}$ is the system temperature, 
 ${t_\text{per\_day}}$ is the number of hours observed per day, $t_{\text{cam}}$ is the number of days
-observed, $N_a$ is the number of antennas, and $f_o/f$ is the configuration metric for a 
-redundant array as defined in \citep{2012ApJ...753...81P}.
+observed, $N_a$ is the number of antennas, and $f_o/f$ is a configuration metric for a 
+redundant array as therein defined.
 
 Note that $\Delta^2_N(k)$ is the standard radiometric sensitivity equation, scaled by
 the volume in $k$-space, normalized by the power spectrum Fourier coefficient, and
@@ -466,6 +474,16 @@ is relatively flat.
 \includegraphics[width=0.8\textwidth]{normcostfunc.png}
 \caption{Normalized cost at fixed sensitivity with reference of 331 14-m antennas}
 \label{fig:normcost}
+\end{figure}
+
+\section{Construction Implications}
+The element construction consists of radial spars with mesh laid over top, so the optics aren't truly a paraboloid, but rather a ``faceted'' parabola.  In order to determine how many spars are needed, the rms of idealized versions was computed for 12 and 24 spars, as shown in Fig. \ref{fig:rms} (left two panels).  The 12-spar rms deviation from a paraboloid is 4.6 cm, which corresponds to a Ruze efficiency of 83.4\% at 220 MHz.  The 24-spar values are 1.2cm and 98.8 \%, however 24 spars get difficult to accommodate with a reasonably sized hub.  Since 12 spars are not adequate and 24 spars gets crowded a ``hybrid'' 12-spar-to-24-spar antenna has been designed (right-most panel of Fig. \ref{fig:rms}).  This approach yields an rms of 1.2cm and a Ruze efficiency of 98.7\% and also accommodates the natural panel-sized width of commercial screen material.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{rms.png}
+\caption{Deviations of a ``faceted parabola'' from a true paraboloid in cm.  From left to right are models using 12 spars (rms=4.6cm, Ruze@220 MHz=83.4\%), 24 spars (1.2, 98.8\%) and the 12/24 hybrid (1.2, 98.7\%).}
+\label{fig:rms}
 \end{figure}
 
 \bibliographystyle{plainnat}
