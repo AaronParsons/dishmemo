@@ -84,8 +84,10 @@ direction.
 Recent work has shown that, for an interferometer whose
 analog bandpass and beam chromaticity are sufficiently smooth, systematics arising from foreground emission
 are isolated in the cylindrically averaged power spectrum $P(\kpr,\kpl)$ within
-a wedge-shaped region \citep{2012ApJ...756..165P,2013ApJ...768L..36P,2014ApJ...788..106P,2015arXiv150206016A}:
-% XXX add the whole list of wedge cites
+a wedge-shaped region ,
+as derived analytically \citep{2012ApJ...756..165P,vedantham_et_al2012,liu_et_al2014a,liu_et_al2014b}, 
+and confirmed in simulations \citep{datta_et_al2010,hazelton_et_al2013} and observationally
+\citep{2013ApJ...768L..36P,dillon_et_al2013b,2014ApJ...788..106P,2015arXiv150206016A}:
 \begin{align}
 |\kpl| &\le \frac{Y}{X\nu}\kpr + YS\nonumber\\
 &\le \frac{Y}{c}b + YS,
@@ -159,14 +161,16 @@ the boundary between the systematics-dominated and signal-dominated regimes.
 As such, it makes the most sense to determine width by the interval in
 delay domain outside of which $\AItau$ is below the expected level
 of the 21cm reionization signal.  Spectrally smooth ($\tau\approx0$) foregrounds are approximately
-four to five times brighter that the expected reionization signal \citep{unknown}XXX, so a conservative definition of
-$S$ requires
+four to five times brighter that the expected reionization signal 
+\citep{santos_et_al2005,ali_et_al2008,deoliveira2008,jelic_et_al2008,bernardi_et_al2009,bernardi_et_al2010,ghosh_et_al2011},
+so a conservative definition of $S$ requires
 \begin{equation}
 \frac{|\AItau|}{|\langle\tilde I\rangle(\tau=0)|}<10^{-6}.
 \label{eq:def_S}
 \end{equation}
 In words, we define $S$ as the delay interval over which
-$\AI$ falls off by -60 dB.  At this level, the contribution from antenna effects are well below the signal level in the region outside from where the foregrounds contaminate.  XXXI added this weak sentence to try and motivate the spec a little better -- needs improvement.XXX
+$\AI$ falls off by -60 dB.  At this level, the contribution from antenna systematics arising from bright
+foregrounds are below the expected signal level.
 
 Given this framework, an obvious design goal for an interferometer aiming to 
 measure the 21cm reionization signal is create antennas that can be close-packed to minimize $b$, and
@@ -182,7 +186,7 @@ dependent on windowing, however choosing a Blackman-Harris window and playing wi
 -1 and -2, we find that a width for $\tilde I$ in range of 10 to 60 ns provides a reasonable bound.  This suggests diminishing returns associated with pushing instrumental chromaticity much lower than 10 to 60 ns.
 
 Also, as we push antennas closer together, galactic synchrotron emission (our dominant foreground) gets
-brighter as $C_\ell\propto\ell^{-3}$ \citep{unknown}XXX.
+brighter as $C_\ell\propto\ell^{-2.4}$ \citep{tegmark_et_al2000,santos_et_al2005}.
 Under the assumption that $\kpl$ is the dominant component of $\kvec$ (which
 holds for the short baselines used in PAPER and HERA),
 this implies that $|\AItau|^2$ must decrease more rapidly than $\tau^{-3}$ for a reduction in baseline length
@@ -194,7 +198,6 @@ strictly linear relationship in equation (\ref{eq:wedge_bound}) (which we will c
 for the shortest baselines is a telltale sign
 of the influence of diffuse synchrotron emission.
 
-%%%XXX If get analytic derivation of foreground profile in delay working, relate to that here.
 Figure 3 in \citet{2013ApJ...768L..36P}
 shows evidence of the departure equation (\ref{eq:wedge_bound}) described above for baselines shorter than
 $\lesssim10$ wavelengths.  Although this empirical result includes a contribution from the PAPER antenna beam,
@@ -234,7 +237,7 @@ Under this specification, we assume the final chromaticity (wedge width) to be t
 individual widths of the $\tilde A$, $\tilde I$, and $\delta_D(\tau_{\bvec,\shat}-\tau)$ terms,
 for a total of 180 ns ($|\kpl|=0.9\hMpci$ at 150 MHz).
 
-% XXX below here treating as memo, not paper
+% below here treating as memo, not paper
 \section{HERA Element Design}
 
 As shown above, the delay-spectrum analysis technique employed for HERA requires that foreground
@@ -409,7 +412,7 @@ by the same large wooden poles that are used to suspend the feed.  The bottom of
 30 cm inward relative to the top, for a tilt of 8.5 degrees from vertical.
 
 \section{Sensitivity and Cost}
-The equation for sensitivity has been described in previous works ({\em c.f} \cite{2012ApJ...753...81P}, XXX\cite{unknown}) and depends on many parameters
+The equation for sensitivity has been described in previous works ({\em c.f} \cite{2012ApJ...753...81P,pober_et_al2014},) and depends on many parameters
 related to the instrumentation, the configuration, the location, the observing strategy, etc.  A useful form for 
 the proposed compact configuration is Eq 27 in \cite{2012ApJ...753...81P} and reproduced here:
 \begin{equation}
